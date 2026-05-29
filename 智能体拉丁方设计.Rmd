@@ -26,8 +26,8 @@ line.method = "Q", legend.add = FALSE)
 plot(data.aov.fitted, data.aov.res,
 xlab = "Fitted", ylab = "Residuals", pch = 0)
 abline(h = 0)
-# 残差与处理的关系图
+# 残差与Temperature的关系图
 plot(as.numeric(data$处理), data.aov.res,
-xlab = "处理", ylab = "Residuals", pch = 0)
+xlab = "Temperature", ylab = "Residuals", pch = 0)
 abline(h = 0)
 ```
