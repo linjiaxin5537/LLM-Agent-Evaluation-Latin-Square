@@ -1,0 +1,33 @@
+---
+title: "小鼠血糖拉丁方设计"
+author: "林佳欣10225000462"
+date: "2024-11-29"
+output: html_document
+---
+
+```{r}
+data <- read.table('mouse.txt',header = TRUE)
+str(data)
+data$鼠号 <- factor(data$鼠号)
+data$次数 <- factor(data$次数)
+data$拉丁方 <- factor(data$拉丁方)
+data$处理 <- factor(data$处理)
+data.aov = aov(data$血糖值 ~ data$处理 + data$次数 + data$拉丁方, data)
+summary(data.aov)
+data.aov = aov(data$血糖值 ~ data$处理 + data$次数 + data$鼠号, data)
+summary(data.aov)
+data.aov.res = residuals(data.aov)
+data.aov.fitted = fitted.values(data.aov)
+# 残差的正态概率图
+source("PP_plot.R")
+pp.plot(x = data.aov.res, pch = 0, xlab = "Residual",
+line.method = "Q", legend.add = FALSE)
+# 残差与拟合值的关系图
+plot(data.aov.fitted, data.aov.res,
+xlab = "Fitted", ylab = "Residuals", pch = 0)
+abline(h = 0)
+# 残差与处理的关系图
+plot(as.numeric(data$处理), data.aov.res,
+xlab = "处理", ylab = "Residuals", pch = 0)
+abline(h = 0)
+```
