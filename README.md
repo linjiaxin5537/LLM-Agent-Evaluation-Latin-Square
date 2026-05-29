@@ -13,7 +13,7 @@
 1. **LangGraph 智能体工作流**：构建具备状态管理与多节点控制的 ReAct 风格智能体，支持动态工具调用（Tool Calling），并集成 Tavily API 实现真实的互联网信息检索。
 2. **BFCL 官方评测集成**：完美适配 Berkeley Function Calling Leaderboard (BFCL) 数据集与评估接口，覆盖 `simple_python`, `multiple_function`, `parallel_function` 等多种函数调用复杂度。
 3. **自动化拉丁方实验矩阵**：通过代码自动调度 $3 \\\\times 3$ 实验矩阵（行：智能体配置，列：任务难度，单元格：样本数量），最大化利用实验样本并有效控制双向区组效应（无交互作用前提下）。
-4. **统计学方差分析 (ANOVA)**：集成 Python `statsmodels` 库，实验结束后自动生成标准的方差分析表，输出平方和 (Sum of Squares)、自由度 (df)、F 检验统计量及 $p$ 值，为模型超参数调优提供具备统计显著性的量化依据。
+4. **统计学方差分析 (ANOVA)**：使用R生成标准的方差分析表，输出平方和 (Sum of Squares)、自由度 (df)、F 检验统计量及 $p$ 值，为模型超参数调优提供具备统计显著性的量化依据。
 
 ---
 
