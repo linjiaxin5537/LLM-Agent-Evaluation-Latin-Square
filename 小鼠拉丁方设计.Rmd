@@ -1,20 +1,20 @@
 ---
-title: "小鼠血糖拉丁方设计"
-author: "林佳欣10225000462"
-date: "2024-11-29"
+title: "智能体拉丁方设计"
+author: "林佳欣"
+date: "2026-5-29"
 output: html_document
 ---
 
 ```{r}
-data <- read.table('mouse.txt',header = TRUE)
+data <- read.table('Agent.txt',header = TRUE)
 str(data)
-data$鼠号 <- factor(data$鼠号)
-data$次数 <- factor(data$次数)
+data$Difficulty <- factor(data$Difficulty)
+data$SampleSize <- factor(data$SampleSize)
 data$拉丁方 <- factor(data$拉丁方)
-data$处理 <- factor(data$处理)
-data.aov = aov(data$血糖值 ~ data$处理 + data$次数 + data$拉丁方, data)
+data$Temperature <- factor(data$Temperature)
+data.aov = aov(data$准确率 ~ data$Temperature + data$SampleSize + data$拉丁方, data)
 summary(data.aov)
-data.aov = aov(data$血糖值 ~ data$处理 + data$次数 + data$鼠号, data)
+data.aov = aov(data$准确率 ~ data$Temperature + data$SampleSize + data$Difficulty, data)
 summary(data.aov)
 data.aov.res = residuals(data.aov)
 data.aov.fitted = fitted.values(data.aov)
