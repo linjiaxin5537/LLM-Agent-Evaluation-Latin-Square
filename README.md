@@ -33,23 +33,6 @@ $$Y_{ijk} = \\\\mu + \\\\alpha_i + \\\\beta_j + \\\\tau_k + \\\\epsilon_{ijk}$$
 
 ---
 
-## 📂 项目结构
-
-```text
-agent-eval-latin-square/
-│
-├── src/
-│   ├── __init__.py
-│   ├── agent_workflow.py    # 基于 LangGraph 与 Tavily API 的智能体工作流定义
-│   ├── eval_pipeline.py     # 适配 BFCL 接口的评估流水线与拉丁方矩阵控制
-│   └── stats_analysis.py    # 基于 statsmodels 的多因素方差分析与数据可视化
-│
-├── .env.example             # 环境变量配置模板
-├── .gitignore               # Git 忽略文件配置
-├── requirements.txt         # 项目依赖项列表
-└── README.md                # 项目说明文档
-```
-
 
 ## 🛠️ 环境准备
 
