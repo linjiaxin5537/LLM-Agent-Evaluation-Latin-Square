@@ -1,15 +1,10 @@
 """
-第十二章：BFCL一键评估脚本
-
 本脚本提供完整的BFCL评估流程：
 1. 自动检查和准备BFCL数据
 2. 运行HelloAgents评估
 3. 导出BFCL格式结果
 4. 调用BFCL官方评估工具
 5. 展示评估结果
-
-使用方法：
-    python examples/04_run_bfcl_evaluation.py
 
 可选参数：
     --category: 评估类别（默认：simple_python）
